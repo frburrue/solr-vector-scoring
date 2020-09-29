@@ -1,20 +1,17 @@
 package com.github.saaay71.solr;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import org.apache.lucene.analysis.payloads.PayloadHelper;
-import org.apache.lucene.index.LeafReader;
-import org.apache.lucene.index.LeafReaderContext;
-import org.apache.lucene.index.PostingsEnum;
-import org.apache.lucene.index.Terms;
-import org.apache.lucene.index.TermsEnum;
+import org.apache.lucene.index.*;
 import org.apache.lucene.queries.CustomScoreProvider;
 import org.apache.lucene.queries.CustomScoreQuery;
 import org.apache.lucene.search.DocIdSetIterator;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.util.BytesRef;
 import org.apache.solr.common.SolrException;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VectorScoreQuery extends CustomScoreQuery {	
 	List<Double> vector;
