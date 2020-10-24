@@ -22,12 +22,16 @@ public class VectorQuery extends Query {
 		Weight w;
 		if(q == null){
 			w =  new ConstantScoreWeight(this, boost) {
+				public boolean isCacheable(LeafReaderContext leafReaderContext) {
+					return false;
+				}
+
 				@Override
 				public Scorer scorer(LeafReaderContext context) throws IOException {
 					return new ConstantScoreScorer(this, score(), DocIdSetIterator.all(context.reader().maxDoc()));
 				}
 			};
-		}else{
+		} else {
 			w = searcher.createWeight(q, needsScores, boost);
 		}
 		return w;
