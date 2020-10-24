@@ -3,6 +3,8 @@
 With this plugin you can query documents with vectors and score them based on dot product or cosine similarity.
 This plugin is the same as [Vector Scoring Plugin for Elasticsearch](https://github.com/MLnick/elasticsearch-vector-scoring).
 
+This plugin is used in the blog post about Neural Search with Solr: https://medium.com/@dmitry.kan/neural-search-with-bert-and-solr-ea5ead060b28
+
 ## Plugin installation
 
 The plugin was developed and tested on Solr `6.6.0`.
