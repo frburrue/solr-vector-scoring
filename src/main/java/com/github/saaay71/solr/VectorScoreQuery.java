@@ -25,10 +25,10 @@ public class VectorScoreQuery extends CustomScoreQuery {
 		this.cosine = cosine;
 		this.vector = new ArrayList<Double>();
 		String[] vectorArray = Vector.split(",");
-		for(int i=0;i<vectorArray.length;i++){
-			double v = Double.parseDouble(vectorArray[i]);
+		for (String s : vectorArray) {
+			double v = Double.parseDouble(s);
 			vector.add(v);
-			if (cosine){
+			if (cosine) {
 				queryVectorNorm += Math.pow(v, 2.0);
 			}
 		}
