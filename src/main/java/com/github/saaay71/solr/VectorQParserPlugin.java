@@ -1,5 +1,6 @@
 package com.github.saaay71.solr;
 
+import org.apache.lucene.queries.function.FunctionScoreQuery;
 import org.apache.lucene.search.Query;
 import org.apache.solr.common.SolrException;
 import org.apache.solr.common.params.SolrParams;
@@ -42,7 +43,7 @@ public class VectorQParserPlugin extends QParserPlugin {
 					throw new SolrException(SolrException.ErrorCode.BAD_REQUEST, "Query is null");
 				}
 
-				return new VectorScoreQuery(query, vector, field, cosine);
+				return new FunctionScoreQuery(query, new VectorValuesSource(field, vector, cosine));
 
 			}
 		};
