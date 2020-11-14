@@ -18,9 +18,9 @@ public class VectorQuery extends Query {
 	}
 
 	@Override
-	public Weight createWeight(IndexSearcher searcher, boolean needsScores, float boost) throws IOException {
+	public Weight createWeight(IndexSearcher searcher, ScoreMode scoreMode, float boost) throws IOException {
 		Weight w;
-		if(q == null){
+		if (q == null){
 			w =  new ConstantScoreWeight(this, boost) {
 				public boolean isCacheable(LeafReaderContext leafReaderContext) {
 					return false;
@@ -28,11 +28,13 @@ public class VectorQuery extends Query {
 
 				@Override
 				public Scorer scorer(LeafReaderContext context) throws IOException {
-					return new ConstantScoreScorer(this, score(), DocIdSetIterator.all(context.reader().maxDoc()));
+
+
+					return new ConstantScoreScorer(this, score(), scoreMode, DocIdSetIterator.all(context.reader().maxDoc()));
 				}
 			};
 		} else {
-			w = searcher.createWeight(q, needsScores, boost);
+			w = searcher.createWeight(q, scoreMode, boost);
 		}
 		return w;
 	}
