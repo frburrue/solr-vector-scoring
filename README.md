@@ -5,6 +5,22 @@ This plugin is the same as [Vector Scoring Plugin for Elasticsearch](https://git
 
 This plugin is used in the blog post about Neural Search with Solr: https://medium.com/@dmitry.kan/neural-search-with-bert-and-solr-ea5ead060b28
 
+## How you can help
+1. Pick a suitable release version for your Solr and test it.
+2. Create issues (and patches)
+3. Spread the word!
+
+## How to release a version
+This project is using Maven release plugin.
+
+Using this command you can test the release process:
+
+    mvn release:prepare -DdryRun=true
+
+If you think it is good to go, issue:
+
+    mvn release:prepare
+
 ## Plugin installation
 
 The plugin was developed and tested on Solr `6.6.0`.
