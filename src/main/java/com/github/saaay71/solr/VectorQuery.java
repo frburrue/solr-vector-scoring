@@ -28,8 +28,6 @@ public class VectorQuery extends Query {
 
 				@Override
 				public Scorer scorer(LeafReaderContext context) throws IOException {
-
-
 					return new ConstantScoreScorer(this, score(), scoreMode, DocIdSetIterator.all(context.reader().maxDoc()));
 				}
 			};
