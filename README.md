@@ -5,6 +5,8 @@ This plugin is the same as [Vector Scoring Plugin for Elasticsearch](https://git
 
 This plugin is used in the blog post about Neural Search with Solr: https://medium.com/@dmitry.kan/neural-search-with-bert-and-solr-ea5ead060b28
 
+The upgrade path from lucene / solr 6.6.0 to 8.x is documented here: https://medium.com/swlh/fun-with-apache-lucene-and-bert-embeddings-c2c496baa559
+
 ## How you can help
 1. Pick a suitable release version for your Solr and test it.
 2. Create issues (and patches)
