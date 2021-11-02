@@ -1,0 +1,3 @@
+/home/pi/solr-vector-scoring/src/main/java/com/github/saaay71/solr/VectorQParserPlugin.java
+/home/pi/solr-vector-scoring/src/main/java/com/github/saaay71/solr/VectorQuery.java
+/home/pi/solr-vector-scoring/src/main/java/com/github/saaay71/solr/VectorValuesSource.java
