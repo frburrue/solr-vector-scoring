@@ -7,7 +7,7 @@
 
     <groupId>com.github.saaay71</groupId>
     <artifactId>solr-vector-scoring</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <build>
         <plugins>
             <plugin>
